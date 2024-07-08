@@ -26,9 +26,9 @@ Route::post('/auth/register', [RegistrationController::class, 'register']);
 Route::post('/auth/login', [LoginController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('/users/{id}', [UserController::class, 'show']);
-    Route::get('/organisations', [OrganizationController::class, 'index']);
-    Route::get('/organisations/{orgId}', [OrganizationController::class, 'show']);
-    Route::post('/organisations', [OrganizationController::class, 'store']);
-    Route::post('/organisations/{orgId}/users', [OrganizationController::class, 'addUserToOrganisation']);
+    Route::get('/api/users/{id}', [UserController::class, 'show']);
+    Route::get('/api/organisations', [OrganizationController::class, 'index']);
+    Route::get('/api/organisations/{orgId}', [OrganizationController::class, 'show']);
+    Route::post('/api/organisations', [OrganizationController::class, 'store']);
+    Route::post('/api/organisations/{orgId}/users', [OrganizationController::class, 'addUserToOrganisation']);
 });
